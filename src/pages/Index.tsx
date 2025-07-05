@@ -42,6 +42,11 @@ const companies = [
     name: "AKR'S Amma Organization",
     description: "Dedicated social organization committed to community development, charitable activities, and supporting underprivileged families in society.",
     icon: "❤️"
+  },
+  {
+    name: "AKR Easy Credit (Pvt) Ltd",
+    description: "Reliable financial services provider offering easy credit solutions, personal loans, and flexible payment options to meet diverse financial needs.",
+    icon: "💳"
   }
 ];
 
@@ -106,7 +111,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">8</div>
+              <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">9</div>
               <div className="text-muted-foreground">Companies</div>
             </div>
             <div className="text-center">
