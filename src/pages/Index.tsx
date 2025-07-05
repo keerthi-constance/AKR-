@@ -1,52 +1,70 @@
 import { Button } from "@/components/ui/button";
 import { CompanyCard } from "@/components/CompanyCard";
 import heroBg from "@/assets/hero-bg.jpg";
+import akrSonsImg from "@/assets/companies/akr-sons.jpg";
+import akrMultiComplexImg from "@/assets/companies/akr-multi-complex.jpg";
+import akrConstructionImg from "@/assets/companies/akr-construction.jpg";
+import akrFuelStationImg from "@/assets/companies/akr-fuel-station.jpg";
+import akrWineStoreImg from "@/assets/companies/akr-wine-store.jpg";
+import akrFarmImg from "@/assets/companies/akr-farm.jpg";
+import akrBeautyZoneImg from "@/assets/companies/akr-beauty-zone.jpg";
+import akrAmmaOrganizationImg from "@/assets/companies/akr-amma-organization.jpg";
+import akrEasyCreditImg from "@/assets/companies/akr-easy-credit.jpg";
 
 const companies = [
   {
     name: "AKR & SONS (PVT) LTD",
     description: "Leading private enterprise providing comprehensive business solutions with decades of expertise in corporate management and strategic development.",
-    icon: "🏢"
+    icon: "🏢",
+    image: akrSonsImg
   },
   {
     name: "AKR Multi Complex",
     description: "Modern commercial and residential complex offering premium spaces for businesses and families with state-of-the-art facilities and services.",
-    icon: "🏗️"
+    icon: "🏗️",
+    image: akrMultiComplexImg
   },
   {
     name: "AKR Construction",
     description: "Professional construction company delivering high-quality infrastructure projects, residential complexes, and commercial buildings with innovative designs.",
-    icon: "🔨"
+    icon: "🔨",
+    image: akrConstructionImg
   },
   {
     name: "AKR Lanka Filing Station",
     description: "Reliable fuel station providing quality petroleum products and automotive services to meet all your vehicle maintenance needs.",
-    icon: "⛽"
+    icon: "⛽",
+    image: akrFuelStationImg
   },
   {
     name: "AKR Wine Store",
     description: "Premium wine retail store offering carefully curated selection of finest wines from around the world for connoisseurs and enthusiasts.",
-    icon: "🍷"
+    icon: "🍷",
+    image: akrWineStoreImg
   },
   {
     name: "AKR Farm",
     description: "Sustainable agricultural enterprise focusing on organic farming practices and fresh produce cultivation using modern farming techniques.",
-    icon: "🌾"
+    icon: "🌾",
+    image: akrFarmImg
   },
   {
     name: "AKR Beauty Zone",
     description: "Luxury beauty salon and spa providing professional beauty treatments, skincare services, and wellness experiences in a premium setting.",
-    icon: "💄"
+    icon: "💄",
+    image: akrBeautyZoneImg
   },
   {
     name: "AKR'S Amma Organization",
     description: "Dedicated social organization committed to community development, charitable activities, and supporting underprivileged families in society.",
-    icon: "❤️"
+    icon: "❤️",
+    image: akrAmmaOrganizationImg
   },
   {
     name: "AKR Easy Credit (Pvt) Ltd",
     description: "Reliable financial services provider offering easy credit solutions, personal loans, and flexible payment options to meet diverse financial needs.",
-    icon: "💳"
+    icon: "💳",
+    image: akrEasyCreditImg
   }
 ];
 
@@ -149,6 +167,7 @@ const Index = () => {
                 name={company.name}
                 description={company.description}
                 icon={company.icon}
+                image={company.image}
               />
             ))}
           </div>
