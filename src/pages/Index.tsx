@@ -183,15 +183,83 @@ const Index = () => {
       {/* Contact Section */}
       <section id="contact" className="py-16">
         <div className="container mx-auto px-6">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              <span className="gradient-text">Get In Touch</span>
-            </h2>
-            <div className="glass-card p-8">
-              <p className="text-lg text-muted-foreground mb-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                <span className="gradient-text">Get In Touch</span>
+              </h2>
+              <p className="text-lg text-muted-foreground">
                 Ready to explore partnership opportunities or learn more about our services? 
                 We'd love to hear from you and discuss how AKR Group can help achieve your goals.
               </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              {/* Contact Information */}
+              <div className="glass-card p-8">
+                <h3 className="text-2xl font-bold gradient-text mb-6">Contact Information</h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Phone Numbers</h4>
+                    <div className="space-y-2 text-muted-foreground">
+                      <p>Murunkan: <span className="text-foreground">0232231222</span></p>
+                      <p>Mannar: <span className="text-foreground">(023) 205 1536</span></p>
+                      <p>Mobile: <span className="text-foreground">0773111266</span></p>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Email</h4>
+                    <p className="text-muted-foreground">
+                      <span className="text-foreground">akrfuture@gmail.com</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Leadership */}
+              <div className="glass-card p-8">
+                <h3 className="text-2xl font-bold gradient-text mb-6">Leadership Team</h3>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-semibold text-foreground">Founder</h4>
+                    <p className="text-lg gradient-text-secondary">S. Anton</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">Chief Executive Officer</h4>
+                    <p className="text-lg gradient-text-secondary mb-2">Anton Rojar Stalin</p>
+                    <div className="text-sm text-muted-foreground space-y-1">
+                      <p>Mobile: <span className="text-foreground">0773111266</span></p>
+                      <p>Email: <span className="text-foreground">antonrojarstalin@gmail.com</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Board of Directors */}
+            <div className="glass-card p-8 mb-12">
+              <h3 className="text-2xl font-bold gradient-text mb-8 text-center">Board of Directors</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <h4 className="font-semibold text-foreground mb-2">Anton Floreda Gamini</h4>
+                  <p className="text-sm text-muted-foreground">Director</p>
+                  <p className="text-sm text-foreground mt-2">antonfloridagamini@gmail.com</p>
+                </div>
+                <div className="text-center">
+                  <h4 className="font-semibold text-foreground mb-2">Anton Andrew Rajan</h4>
+                  <p className="text-sm text-muted-foreground">Director</p>
+                  <p className="text-sm text-foreground mt-2">antonandrewrajan29@gmail.com</p>
+                </div>
+                <div className="text-center">
+                  <h4 className="font-semibold text-foreground mb-2">Anton Anbu Rajan</h4>
+                  <p className="text-sm text-muted-foreground">Director</p>
+                  <p className="text-sm text-foreground mt-2">antonanburajan14@gmail.com</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center">
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="cosmic" size="lg">
                   Contact Us
