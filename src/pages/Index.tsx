@@ -96,19 +96,32 @@ export default function Index() {
         </div>
       </nav>
 
-      {/* Hero Section with Centered Slideshow */}
-      <section id="home" className="pt-24 pb-16">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="gradient-text">Welcome to AKR Group Of Companies</span>
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+      {/* Hero Section with Slideshow */}
+      <section id="home" className="pt-20 relative overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+          <div className="absolute inset-0">
+            {/* Floating particles with different animations */}
+            <div className="absolute top-10 left-10 w-20 h-20 bg-gradient-primary rounded-full opacity-20 animate-float"></div>
+            <div className="absolute top-32 right-20 w-16 h-16 bg-gradient-secondary rounded-full opacity-30 animate-bounce"></div>
+            <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-gradient-accent rounded-full opacity-25 animate-ping"></div>
+            <div className="absolute top-1/2 right-1/3 w-8 h-8 bg-gradient-primary rounded-full opacity-40 animate-spin"></div>
+            <div className="absolute top-1/4 left-1/3 w-6 h-6 bg-gradient-secondary rounded-full opacity-35 animate-float"></div>
+            <div className="absolute bottom-1/3 right-1/4 w-10 h-10 bg-gradient-accent rounded-full opacity-20 animate-pulse"></div>
+            <div className="absolute top-3/4 left-1/2 w-4 h-4 bg-gradient-primary rounded-full opacity-30 animate-float"></div>
+            <div className="absolute top-1/3 right-1/2 w-14 h-14 bg-gradient-secondary rounded-full opacity-25 animate-glow"></div>
+          </div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <HeroSlideshow />
+          
+          <div className="text-center mt-8 mb-12">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-medium">
               Empowering diverse industries through innovation, excellence, and commitment to sustainable growth across
               multiple business sectors.
             </p>
           </div>
-          <HeroSlideshow />
         </div>
       </section>
 
