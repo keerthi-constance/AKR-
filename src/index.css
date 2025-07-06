@@ -391,5 +391,21 @@
   .animate-dynamicRotate2 {
     animation: dynamicRotate2 15s linear infinite;
   }
+
+  /* Mobile Navigation Styles */
+  #mobile-menu {
+    transition: all 0.3s ease-in-out;
+  }
+
+  #mobile-menu.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+  }
+
+  #mobile-menu:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 

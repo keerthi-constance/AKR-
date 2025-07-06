@@ -66,13 +66,17 @@ export default function Index() {
     <div className="min-h-screen">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-0 border-b border-white/10">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 md:px-6 py-3 md:py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <img src="/images/image copy 2.png" alt="AKR Group Logo" className="h-12 w-12 object-contain" />
-              <div className="text-2xl font-bold gradient-text">AKR GROUP OF COMPANIES</div>
+            {/* Logo and Company Name */}
+            <div className="flex items-center space-x-2 md:space-x-4">
+              <img src="/images/image copy 2.png" alt="AKR Group Logo" className="h-8 w-8 md:h-12 md:w-12 object-contain" />
+              <div className="text-lg md:text-2xl font-bold gradient-text hidden sm:block">AKR GROUP OF COMPANIES</div>
+              <div className="text-sm md:text-lg font-bold gradient-text sm:hidden">AKR GROUP</div>
             </div>
-            <div className="flex items-center space-x-8">
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
               <a href="#home" className="text-gray-800 hover:gradient-text transition-all duration-300 font-medium">
                 Home
               </a>
@@ -92,12 +96,69 @@ export default function Index() {
                 Contact
               </a>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors duration-200"
+              onClick={() => {
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu) {
+                  mobileMenu.classList.toggle('hidden');
+                }
+              }}
+            >
+              <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Mobile Navigation Menu */}
+          <div id="mobile-menu" className="hidden md:hidden mt-4 pb-4">
+            <div className="flex flex-col space-y-3">
+              <a 
+                href="#home" 
+                className="text-gray-800 hover:gradient-text transition-all duration-300 font-medium py-2 px-3 rounded-lg hover:bg-white/10"
+                onClick={() => {
+                  document.getElementById('mobile-menu')?.classList.add('hidden');
+                }}
+              >
+                Home
+              </a>
+              <a
+                href="#companies"
+                className="text-gray-800 hover:gradient-text transition-all duration-300 font-medium py-2 px-3 rounded-lg hover:bg-white/10"
+                onClick={() => {
+                  document.getElementById('mobile-menu')?.classList.add('hidden');
+                }}
+              >
+                Companies
+              </a>
+              <a 
+                href="#about" 
+                className="text-gray-800 hover:gradient-text transition-all duration-300 font-medium py-2 px-3 rounded-lg hover:bg-white/10"
+                onClick={() => {
+                  document.getElementById('mobile-menu')?.classList.add('hidden');
+                }}
+              >
+                About
+              </a>
+              <a
+                href="#contact"
+                className="text-gray-800 hover:gradient-text transition-all duration-300 font-medium py-2 px-3 rounded-lg hover:bg-white/10"
+                onClick={() => {
+                  document.getElementById('mobile-menu')?.classList.add('hidden');
+                }}
+              >
+                Contact
+              </a>
+            </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section with Slideshow */}
-      <section id="home" className="pt-20 relative overflow-hidden">
+      <section id="home" className="pt-16 md:pt-20 relative overflow-hidden">
         {/* Dynamic Moving Elements Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
           <div className="absolute inset-0">
