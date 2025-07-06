@@ -10,7 +10,7 @@ interface CompanyCardProps {
 
 export function CompanyCard({ name, description, icon, image }: CompanyCardProps) {
   return (
-    <Card className="glass-card p-6 cosmic-hover group overflow-hidden">
+    <Card className="card-enhanced cosmic-hover group overflow-hidden">
       <div className="space-y-4">
         {image ? (
           <div className="w-full h-48 rounded-lg overflow-hidden">
@@ -28,12 +28,12 @@ export function CompanyCard({ name, description, icon, image }: CompanyCardProps
           )
         )}
         <div>
-          <h3 className="text-xl font-old-english text-foreground mb-2 group-hover:gradient-text transition-all duration-300">
+          <h3 className="text-xl font-old-english text-enhanced mb-2 group-hover:gradient-text transition-all duration-300 font-semibold">
             {name}
           </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed mb-4">{description}</p>
+          <p className="text-muted-enhanced text-sm leading-relaxed mb-4 font-medium">{description}</p>
         </div>
-        <Button size="sm" className="w-full bg-gradient-primary hover:bg-gradient-primary/90">
+        <Button size="sm" className="w-full btn-enhanced bg-gradient-primary hover:bg-gradient-primary/90">
           Learn More
         </Button>
       </div>
