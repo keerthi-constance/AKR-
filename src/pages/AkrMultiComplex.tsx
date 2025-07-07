@@ -149,17 +149,17 @@ export default function AkrMultiComplex() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] mx-2 p-0 relative animate-fadeIn flex flex-col overflow-hidden">
             {/* Large Image with Icon Overlay */}
-            <div className="relative w-full h-48 sm:h-64 bg-gray-100 flex items-center justify-center">
-              <img src={selectedFacility.image} alt={selectedFacility.name} className="w-full h-full object-cover rounded-t-2xl" />
-              <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-white/80 rounded-full p-2 shadow-md flex items-center justify-center">
+            <div className="relative w-full h-36 sm:h-48 bg-gray-100 flex items-center justify-center rounded-t-2xl overflow-hidden shadow-md border-b border-gray-200">
+              <img src={selectedFacility.image} alt={selectedFacility.name} className="w-full h-full object-cover" />
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white/80 rounded-full p-2 shadow flex items-center justify-center">
                 {selectedFacility.icon}
               </div>
             </div>
-            {/* Header */}
-            <div className="flex justify-between items-center p-4 sm:p-6 border-b border-gray-200">
-              <h2 className="text-xl sm:text-2xl font-old-english text-gray-800 text-center w-full">{selectedFacility.name} Details</h2>
+            {/* Sticky Header */}
+            <div className="sticky top-0 z-10 bg-white/95 border-b border-gray-200 flex justify-between items-center px-4 sm:px-6 py-3">
+              <h2 className="text-lg sm:text-2xl font-old-english text-gray-800 text-center w-full">{selectedFacility.name} Details</h2>
               <button
-                className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl font-bold z-10"
+                className="absolute top-3 right-4 text-gray-400 hover:text-gray-700 text-2xl font-bold z-20"
                 onClick={() => setSelectedFacility(null)}
                 aria-label="Close"
               >
@@ -167,13 +167,13 @@ export default function AkrMultiComplex() {
               </button>
             </div>
             {/* Content */}
-            <div className="flex-1 overflow-y-auto min-h-0 p-4 sm:p-6">
+            <div className="flex-1 overflow-y-auto min-h-0 px-4 sm:px-8 py-4">
               <div className="max-w-2xl mx-auto">
-                <h3 className="text-2xl font-old-english text-gray-800 mb-2 text-center">{selectedFacility.name}</h3>
-                <p className="text-gray-600 mb-4 text-center">{selectedFacility.description}</p>
+                <h3 className="text-xl sm:text-2xl font-old-english text-gray-800 mb-2 text-center">{selectedFacility.name}</h3>
+                <p className="text-gray-600 mb-6 text-center">{selectedFacility.description}</p>
                 {/* Features */}
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-gray-800 mb-2">Key Features</h4>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-3 text-center">Key Features</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {selectedFacility.features?.map((feature, i) => (
                       <div key={i} className="flex items-center gap-2">
@@ -185,10 +185,10 @@ export default function AkrMultiComplex() {
                 </div>
                 {/* Specifications */}
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-gray-800 mb-2">Specifications</h4>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-3 text-center">Specifications</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {selectedFacility.specifications && Object.entries(selectedFacility.specifications).map(([key, value]) => (
-                      <div key={key} className="bg-gray-50 rounded-lg p-3">
+                      <div key={key} className="bg-gray-50 rounded-lg p-3 text-center">
                         <span className="block font-semibold text-gray-700 capitalize">{key.replace(/([A-Z])/g, ' $1')}</span>
                         <span className="block text-gray-600 text-sm">{value}</span>
                       </div>
@@ -198,8 +198,8 @@ export default function AkrMultiComplex() {
               </div>
             </div>
             {/* Contact Section */}
-            <div className="border-t border-gray-200 p-4 sm:p-6">
-              <h4 className="text-lg font-semibold text-gray-800 mb-4">Contact & Location</h4>
+            <div className="border-t border-gray-200 px-4 sm:px-6 py-4">
+              <h4 className="text-lg font-semibold text-gray-800 mb-4 text-center">Contact & Location</h4>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center space-y-2">
                   <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto">
