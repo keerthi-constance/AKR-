@@ -341,7 +341,7 @@ export default function AkrSonsBikeStore() {
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-10 bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0">
+      <nav className="relative z-30 bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Button
@@ -353,8 +353,8 @@ export default function AkrSonsBikeStore() {
               Back to Home
             </Button>
             <div className="text-center">
-              <h1 className="text-2xl font-old-english text-gray-800">AKR & SONS</h1>
-              <p className="text-sm text-gray-600">Premium Motorcycle Dealership</p>
+              <h1 className="text-lg font-old-english text-gray-500 tracking-wide">AKR & SONS</h1>
+              <p className="text-xs text-gray-400">Premium Motorcycle Dealership</p>
             </div>
             <div className="flex items-center gap-4">
               <Button variant="outline" size="sm">
@@ -367,9 +367,9 @@ export default function AkrSonsBikeStore() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="relative z-10 pt-36 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-old-english text-gray-800 mb-6">
+          <h1 className="text-4xl md:text-5xl font-old-english text-gray-800 mb-6 drop-shadow-sm bg-white/70 inline-block px-6 py-2 rounded-xl">
             Premium Motorcycles
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
