@@ -7,28 +7,28 @@ const slides = [
     id: 1,
     title: "AKR Group of Companies",
     subtitle: "Empowering diverse industries through innovation and excellence",
-    image: "/src/assets/companies/akr-sons.jpg",
+    image: "/images/akr-sons.jpg",
     description: "Leading private enterprise providing comprehensive business solutions"
   },
   {
     id: 2,
     title: "AKR Multi Complex",
     subtitle: "Modern commercial and residential spaces",
-    image: "/src/assets/companies/akr-multi-complex.jpg",
+    image: "/images/akr-multi-complex.jpg",
     description: "Premium spaces for businesses and families"
   },
   {
     id: 3,
     title: "AKR Construction",
     subtitle: "Building the future with quality and innovation",
-    image: "/src/assets/companies/akr-construction.jpg",
+    image: "/images/akr-construction.jpg",
     description: "High-quality infrastructure and commercial projects"
   },
   {
     id: 4,
     title: "AKR Farm",
     subtitle: "Sustainable agriculture for a better tomorrow",
-    image: "/src/assets/companies/akr-farm.jpg",
+    image: "/images/akr-farm.jpg",
     description: "Organic farming practices and fresh produce"
   },
   {

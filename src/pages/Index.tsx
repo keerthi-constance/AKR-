@@ -8,56 +8,56 @@ const companies = [
     description:
       "Leading private enterprise providing comprehensive business solutions with decades of expertise in corporate management and strategic development.",
     icon: "🏢",
-    image: "/src/assets/companies/akr-sons.jpg",
+    image: "/images/akr-sons.jpg",
   },
   {
     name: "AKR Multi Complex",
     description:
       "Modern commercial and residential complex offering premium spaces for businesses and families with state-of-the-art facilities and services.",
     icon: "🏗️",
-    image: "/src/assets/companies/akr-multi-complex.jpg",
+    image: "/images/akr-multi-complex.jpg",
   },
   {
     name: "AKR Construction",
     description:
       "Professional construction company delivering high-quality infrastructure projects, residential complexes, and commercial buildings with innovative designs.",
     icon: "🔨",
-    image: "/src/assets/companies/akr-construction.jpg",
+    image: "/images/akr-construction.jpg",
   },
   {
     name: "AKR Lanka Filing Station",
     description:
       "Reliable fuel station providing quality petroleum products and automotive services to meet all your vehicle maintenance needs.",
     icon: "⛽",
-    image: "/src/assets/companies/akr-fuel-station.jpg",
+    image: "/images/akr-fuel-station.jpg",
   },
   {
     name: "AKR Wine Store",
     description:
       "Premium wine retail store offering carefully curated selection of finest wines from around the world for connoisseurs and enthusiasts.",
     icon: "🍷",
-    image: "/src/assets/companies/akr-wine-store.jpg",
+    image: "/images/akr-wine-store.jpg",
   },
   {
     name: "AKR Farm",
     description:
       "Sustainable agricultural enterprise focusing on organic farming practices and fresh produce cultivation using modern farming techniques.",
     icon: "🌾",
-    image: "/src/assets/companies/akr-farm.jpg",
+    image: "/images/akr-farm.jpg",
   },
   {
     name: "AKR'S Amma Organization",
     description:
       "Dedicated social organization committed to community development, charitable activities, and supporting underprivileged families in society.",
     icon: "❤️",
-    image: "/src/assets/companies/akr-amma-organization.jpg",
+    image: "/images/akr-amma-organization.jpg",
   },
   {
     name: "AKR Easy Credit (Pvt) Ltd",
     description:
       "Reliable financial services provider offering easy credit solutions, personal loans, and flexible payment options to meet diverse financial needs.",
     icon: "💳",
-    image: "/src/assets/companies/akr-easy-credit.jpg",
+    image: "/images/akr-easy-credit.jpg",
   },
 ]
 
