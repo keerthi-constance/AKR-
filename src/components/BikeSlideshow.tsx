@@ -75,7 +75,7 @@ export function BikeSlideshow({ bikes, onClose, onBookNow, selectedColors = {}, 
 
   return (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
+      <div className="bg-white rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col">
         {/* Header */}
         <div className="flex justify-between items-center p-6 border-b border-gray-200">
           <h2 className="text-2xl font-old-english text-gray-800">Bike Details</h2>
@@ -85,7 +85,7 @@ export function BikeSlideshow({ bikes, onClose, onBookNow, selectedColors = {}, 
         </div>
 
         {/* Slideshow Content */}
-        <div className="flex h-[calc(90vh-120px)]">
+        <div className="flex-1 flex h-0">
           {/* Main Content */}
           <div className="flex-1 p-6 overflow-y-auto" ref={scrollRef}>
             <div className="space-y-8">

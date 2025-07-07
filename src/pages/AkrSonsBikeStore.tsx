@@ -478,17 +478,17 @@ export default function AkrSonsBikeStore() {
                       <div className="text-2xl font-bold text-gray-800 mb-4">
                         {bike.price}
                       </div>
-                      <div className="flex gap-2">
+                      <div className="flex flex-col gap-2 mt-2 sm:flex-row">
                         <Button 
                           variant="outline"
-                          className="flex-1"
+                          className="w-full sm:flex-1"
                           onClick={() => setShowSlideshow(true)}
                         >
                           <Eye className="w-4 h-4 mr-2" />
                           View Details
                         </Button>
                         <Button 
-                          className="flex-1 bg-gradient-primary hover:bg-gradient-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105"
+                          className="w-full sm:flex-1 bg-gradient-primary hover:bg-gradient-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105"
                           onClick={() => handleBookNow({ name: bike.name, price: bike.price })}
                         >
                           <Calendar className="w-4 h-4 mr-2" />
