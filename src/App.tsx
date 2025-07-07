@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import AkrSonsBikeStore from "./pages/AkrSonsBikeStore";
 import NotFound from "./pages/NotFound";
+import AkrMultiComplex from "./pages/AkrMultiComplex";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/akr-sons-bike-store" element={<AkrSonsBikeStore />} />
+          <Route path="/akr-multi-complex" element={<AkrMultiComplex />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
