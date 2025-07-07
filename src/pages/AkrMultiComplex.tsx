@@ -90,8 +90,8 @@ export default function AkrMultiComplex() {
               Back to Home
             </Button>
             <div className="text-center">
-              <h1 className="text-lg font-old-english text-gray-500 tracking-wide">AKR Multi Complex</h1>
-              <p className="text-xs text-gray-400">Premium Commercial & Residential Hub</p>
+              <h1 className="text-base sm:text-lg font-old-english text-gray-500 tracking-wide leading-tight">AKR Multi Complex</h1>
+              <p className="text-xs sm:text-xs text-gray-400 leading-tight mt-1">Premium Commercial & Residential Hub</p>
             </div>
             <div className="flex items-center gap-4">
               <Button variant="outline" size="sm">
@@ -104,12 +104,12 @@ export default function AkrMultiComplex() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative z-10 pt-36 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="relative z-10 pt-28 sm:pt-36 pb-10 sm:pb-16 px-2 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-old-english text-gray-800 mb-6 drop-shadow-sm bg-white/70 inline-block px-6 py-2 rounded-xl">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-old-english text-gray-800 mb-4 sm:mb-6 drop-shadow-sm bg-white/70 inline-block px-3 sm:px-6 py-2 rounded-xl">
             AKR Multi Complex
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto">
             Discover a world of convenience, luxury, and modern amenities at AKR Multi Complex. Our facilities are designed to meet the needs of families, businesses, and guests with professionalism and excellence.
           </p>
         </div>
@@ -148,11 +148,18 @@ export default function AkrMultiComplex() {
       {selectedFacility && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-3xl sm:max-h-[90vh] p-0 relative animate-fadeIn flex flex-col overflow-hidden">
+            {/* Large Image with Icon Overlay */}
+            <div className="relative w-full h-48 sm:h-64 bg-gray-100 flex items-center justify-center">
+              <img src={selectedFacility.image} alt={selectedFacility.name} className="w-full h-full object-cover rounded-t-2xl" />
+              <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-white/80 rounded-full p-2 shadow-md flex items-center justify-center">
+                {selectedFacility.icon}
+              </div>
+            </div>
             {/* Header */}
             <div className="flex justify-between items-center p-4 sm:p-6 border-b border-gray-200">
-              <h2 className="text-2xl font-old-english text-gray-800">{selectedFacility.name} Details</h2>
+              <h2 className="text-xl sm:text-2xl font-old-english text-gray-800 text-center w-full">{selectedFacility.name} Details</h2>
               <button
-                className="text-gray-400 hover:text-gray-700 text-2xl font-bold"
+                className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl font-bold z-10"
                 onClick={() => setSelectedFacility(null)}
                 aria-label="Close"
               >
@@ -160,30 +167,25 @@ export default function AkrMultiComplex() {
               </button>
             </div>
             {/* Content */}
-            <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 p-4 sm:p-6 overflow-y-auto flex-1 min-h-0">
-              {/* Image and Icon */}
-              <div className="flex-1 flex flex-col items-center">
-                <div className="w-full h-48 sm:h-56 rounded-xl overflow-hidden mb-4 bg-gray-100 flex items-center justify-center">
-                  <img src={selectedFacility.image} alt={selectedFacility.name} className="w-full h-full object-cover" />
-                </div>
-                <div className="mb-2">{selectedFacility.icon}</div>
-              </div>
-              {/* Info */}
-              <div className="flex-1 space-y-4">
-                <h3 className="text-2xl font-old-english text-gray-800 mb-2">{selectedFacility.name}</h3>
-                <p className="text-gray-600 mb-4">{selectedFacility.description}</p>
+            <div className="flex-1 overflow-y-auto min-h-0 p-4 sm:p-6">
+              <div className="max-w-2xl mx-auto">
+                <h3 className="text-2xl font-old-english text-gray-800 mb-2 text-center">{selectedFacility.name}</h3>
+                <p className="text-gray-600 mb-4 text-center">{selectedFacility.description}</p>
                 {/* Features */}
-                <div>
+                <div className="mb-6">
                   <h4 className="text-lg font-semibold text-gray-800 mb-2">Key Features</h4>
-                  <ul className="list-disc list-inside text-gray-600 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {selectedFacility.features?.map((feature, i) => (
-                      <li key={i}>{feature}</li>
+                      <div key={i} className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <span className="text-gray-600 text-sm">{feature}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
                 {/* Specifications */}
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-800 mb-2 mt-4">Specifications</h4>
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold text-gray-800 mb-2">Specifications</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {selectedFacility.specifications && Object.entries(selectedFacility.specifications).map(([key, value]) => (
                       <div key={key} className="bg-gray-50 rounded-lg p-3">
