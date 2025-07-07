@@ -69,10 +69,16 @@ export default function Index() {
         <div className="container mx-auto px-4 md:px-6 py-3 md:py-4">
           <div className="flex items-center justify-between">
             {/* Logo and Company Name */}
-            <div className="flex items-center space-x-2 md:space-x-4">
-              <img src="/images/image copy 2.png" alt="AKR Group Logo" className="h-8 w-8 md:h-12 md:w-12 object-contain" />
-              <div className="text-lg md:text-2xl font-bold gradient-text hidden sm:block">AKR GROUP OF COMPANIES</div>
-              <div className="text-sm md:text-lg font-bold gradient-text sm:hidden">AKR GROUP</div>
+            <div className="flex items-center space-x-3 md:space-x-4">
+              <a href="#home" className="flex items-center space-x-3 md:space-x-4 hover:opacity-80 transition-opacity duration-200">
+                <img 
+                  src="/images/image copy 2.png" 
+                  alt="AKR Group Logo" 
+                  className="h-10 w-10 md:h-14 md:w-14 object-contain drop-shadow-sm hover:scale-105 transition-transform duration-200" 
+                />
+                <div className="text-lg md:text-2xl font-bold gradient-text hidden sm:block">AKR GROUP OF COMPANIES</div>
+                <div className="text-sm md:text-lg font-bold gradient-text sm:hidden">AKR GROUP</div>
+              </a>
             </div>
             
             {/* Desktop Navigation */}
@@ -182,7 +188,7 @@ export default function Index() {
             <div className="absolute top-1/4 left-1/2 w-12 h-12 border-2 border-emerald-400/25 rounded-full animate-dynamicRotate2"></div>
           </div>
         </div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="mt-4">
             <HeroSlideshow />
@@ -192,7 +198,7 @@ export default function Index() {
             <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium">
               Empowering diverse industries through innovation, excellence, and commitment to sustainable growth across
               multiple business sectors.
-            </p>
+              </p>
           </div>
         </div>
       </section>
@@ -266,12 +272,12 @@ export default function Index() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {companies.map((company, index) => (
               <div key={index} className="group">
-                <CompanyCard
-                  name={company.name}
-                  description={company.description}
-                  icon={company.icon}
-                  image={company.image}
-                />
+              <CompanyCard
+                name={company.name}
+                description={company.description}
+                icon={company.icon}
+                image={company.image}
+              />
               </div>
             ))}
           </div>
@@ -291,7 +297,7 @@ export default function Index() {
               </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="gradient-text">About AKR Group Of Companies</span>
-              </h2>
+            </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Building a legacy of excellence through innovation, integrity, and unwavering commitment to our community
               </p>
@@ -430,23 +436,23 @@ export default function Index() {
             {/* Board of Directors */}
             <div className="glass-card p-8 mb-12">
               <h3 className="text-2xl font-bold gradient-text mb-8 text-center">Board of Directors</h3>
-                              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="text-center">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center">
                     <h4 className="font-semibold text-gray-800 mb-2">Anton Floreda Gamini</h4>
                     <p className="text-sm text-gray-600">Director</p>
                     <p className="text-sm text-gray-700 font-medium mt-2">antonfloridagamini@gmail.com</p>
-                  </div>
-                  <div className="text-center">
+                </div>
+                <div className="text-center">
                     <h4 className="font-semibold text-gray-800 mb-2">Anton Andrew Rajan</h4>
                     <p className="text-sm text-gray-600">Director</p>
                     <p className="text-sm text-gray-700 font-medium mt-2">antonandrewrajan29@gmail.com</p>
-                  </div>
-                  <div className="text-center">
+                </div>
+                <div className="text-center">
                     <h4 className="font-semibold text-gray-800 mb-2">Anton Anbu Rajan</h4>
                     <p className="text-sm text-gray-600">Director</p>
                     <p className="text-sm text-gray-700 font-medium mt-2">antonanburajan14@gmail.com</p>
-                  </div>
                 </div>
+              </div>
             </div>
 
             {/* Call to Action */}

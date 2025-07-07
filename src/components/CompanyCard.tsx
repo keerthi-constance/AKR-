@@ -1,3 +1,5 @@
+"use client"
+
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
@@ -13,7 +15,7 @@ export function CompanyCard({ name, description, icon, image }: CompanyCardProps
     <Card className="glass-card p-6 cosmic-hover group overflow-hidden relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500">
       {/* Hover overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
-      
+
       <div className="relative z-10 space-y-4">
         {image ? (
           <div className="w-full h-48 rounded-xl overflow-hidden relative">
@@ -33,18 +35,23 @@ export function CompanyCard({ name, description, icon, image }: CompanyCardProps
           )
         )}
         <div>
-          <h3 className="text-xl font-old-english text-gray-800 mb-3 group-hover:gradient-text transition-all duration-300 leading-tight">
+          <h3 className="text-xl font-old-english text-foreground mb-3 group-hover:gradient-text transition-all duration-300 leading-tight">
             {name}
           </h3>
-          <p className="text-gray-600 text-sm leading-relaxed mb-6 group-hover:text-gray-700 transition-colors duration-300">
+          <p className="text-gray-700 text-sm leading-relaxed mb-6 group-hover:text-gray-800 transition-colors duration-300 font-medium">
             {description}
           </p>
         </div>
-        <Button 
-          size="sm" 
+        <Button
+          size="sm"
           className="w-full bg-gradient-primary hover:bg-gradient-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105"
+          onClick={() => {
+            if (name === "AKR & SONS (PVT) LTD") {
+              window.location.href = "/akr-sons-bike-store"
+            }
+          }}
         >
-          Learn More
+          {name === "AKR & SONS (PVT) LTD" ? "Visit Bike Store" : "Learn More"}
         </Button>
       </div>
     </Card>
