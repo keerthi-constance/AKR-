@@ -12,13 +12,13 @@ interface CompanyCardProps {
 
 export function CompanyCard({ name, description, icon, image }: CompanyCardProps) {
   return (
-    <Card className="glass-card p-6 cosmic-hover group overflow-hidden relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500">
+    <Card className="glass-card p-4 sm:p-6 cosmic-hover group overflow-hidden relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col">
       {/* Hover overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
 
-      <div className="relative z-10 space-y-4">
+      <div className="relative z-10 flex flex-col space-y-3 sm:space-y-4">
         {image ? (
-          <div className="w-full h-48 rounded-xl overflow-hidden relative">
+          <div className="w-full aspect-[4/3] rounded-xl overflow-hidden relative flex items-center justify-center bg-gray-100">
             <img
               src={image || "/placeholder.svg"}
               alt={name}
@@ -29,22 +29,22 @@ export function CompanyCard({ name, description, icon, image }: CompanyCardProps
           </div>
         ) : (
           icon && (
-            <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+            <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300 mx-auto">
               {icon}
             </div>
           )
         )}
         <div>
-          <h3 className="text-xl font-old-english text-foreground mb-3 group-hover:gradient-text transition-all duration-300 leading-tight">
+          <h3 className="text-lg sm:text-xl font-old-english text-foreground mb-2 sm:mb-3 group-hover:gradient-text transition-all duration-300 leading-tight">
             {name}
           </h3>
-          <p className="text-gray-700 text-sm leading-relaxed mb-6 group-hover:text-gray-800 transition-colors duration-300 font-medium">
+          <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6 group-hover:text-gray-800 transition-colors duration-300 font-medium break-words">
             {description}
           </p>
         </div>
         <Button
           size="sm"
-          className="w-full bg-gradient-primary hover:bg-gradient-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105"
+          className="w-full bg-gradient-primary hover:bg-gradient-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 text-base py-2"
           onClick={() => {
             if (name === "AKR & SONS (PVT) LTD") {
               window.location.href = "/akr-sons-bike-store"

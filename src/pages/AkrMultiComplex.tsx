@@ -10,7 +10,7 @@ const facilities = [
     name: "Shopping Center",
     description: "A modern shopping center with a variety of retail outlets, brands, and services for all your needs.",
     icon: <ShoppingCart className="w-8 h-8 text-blue-500" />, 
-    image: "/images/akr-multi-complex.jpg",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
     features: ["Wide range of shops", "Food court", "Kids play area", "Parking", "Security"],
     specifications: {
       area: "10,000 sq ft",
@@ -24,7 +24,7 @@ const facilities = [
     name: "Party Hall & Restaurant",
     description: "Spacious party hall and a fine restaurant for celebrations, events, and dining experiences.",
     icon: <Users className="w-8 h-8 text-pink-500" />, 
-    image: "/images/akr-multi-complex.jpg",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80",
     features: ["Banquet seating", "Stage & AV", "Catering", "Private dining", "Event planning"],
     specifications: {
       capacity: "300+ guests",
@@ -37,7 +37,7 @@ const facilities = [
     name: "Hotel & Rooms",
     description: "Comfortable hotel rooms and suites for guests, business travelers, and families.",
     icon: <BedDouble className="w-8 h-8 text-green-500" />, 
-    image: "/images/akr-multi-complex.jpg",
+    image: "https://images.unsplash.com/photo-1501117716987-c8e1ecb2103c?auto=format&fit=crop&w=600&q=80",
     features: ["Luxury suites", "Room service", "Wi-Fi", "Conference rooms", "Laundry"],
     specifications: {
       rooms: "80+",
@@ -50,7 +50,7 @@ const facilities = [
     name: "Gym & Theater",
     description: "State-of-the-art gym and a modern theater for fitness and entertainment.",
     icon: <Dumbbell className="w-8 h-8 text-purple-500" />, 
-    image: "/images/akr-multi-complex.jpg",
+    image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=600&q=80",
     features: ["Modern equipment", "Personal trainers", "Group classes", "Cinema screen", "Dolby sound"],
     specifications: {
       gymArea: "2,000 sq ft",
@@ -62,7 +62,7 @@ const facilities = [
     name: "AKR Service Center",
     description: "Professional service center for vehicle maintenance and repairs.",
     icon: <Wrench className="w-8 h-8 text-yellow-500" />, 
-    image: "/images/akr-multi-complex.jpg",
+    image: "https://images.unsplash.com/photo-1515922074642-6c2b7b5b8c8a?auto=format&fit=crop&w=600&q=80",
     features: ["Certified mechanics", "Genuine parts", "Quick service", "Customer lounge", "Warranty support"],
     specifications: {
       bays: "10",

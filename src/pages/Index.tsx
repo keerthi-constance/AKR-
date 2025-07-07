@@ -50,7 +50,7 @@ const companies = [
     description:
       "Dedicated social organization committed to community development, charitable activities, and supporting underprivileged families in society.",
     icon: "❤️",
-    image: "/images/akr-amma-organization.jpg",
+    image: "/images/AKR%20AMMA.jpg",
   },
   {
     name: "AKR Easy Credit (Pvt) Ltd",
