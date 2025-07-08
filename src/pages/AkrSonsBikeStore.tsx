@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom"
 import { BikeSlideshow } from "@/components/BikeSlideshow"
 import { BookingForm } from "@/components/BookingForm"
 import { ColorSelector } from "@/components/ColorSelector"
+import { Dialog } from "@/components/ui/dialog"
 
 const bikes = [
   // Pulsar Category
@@ -220,6 +221,7 @@ export default function AkrSonsBikeStore() {
   const [showBookingForm, setShowBookingForm] = useState(false)
   const [selectedBike, setSelectedBike] = useState<typeof bikes[0] | null>(null)
   const [selectedColors, setSelectedColors] = useState<{ [key: number]: any }>({})
+  const [showN160Details, setShowN160Details] = useState(false)
 
   const handleBookNow = (bike: typeof bikes[0]) => {
     setSelectedBike(bike)
@@ -238,6 +240,16 @@ export default function AkrSonsBikeStore() {
       return selectedColors[bike.id].image
     }
     return bike.image
+  }
+
+  const handleViewDetails = (bike) => {
+    if (bike.name === "Pulsar N160") {
+      setSelectedBike(bike)
+      setShowN160Details(true)
+    } else {
+      setSelectedBike(bike)
+      setShowSlideshow(true)
+    }
   }
 
   return (
@@ -333,7 +345,7 @@ export default function AkrSonsBikeStore() {
                         <img
                           src={getBikeImage(bike)}
                           alt={bike.name}
-                          className={`w-full h-full object-contain mx-auto relative z-20 transition-transform duration-500 group-hover:scale-105 ${bike.category === 'Three Wheeler' ? 'scale-125' : ''}`}
+                          className={`w-full h-full object-contain mx-auto relative z-20 transition-transform duration-500 group-hover:scale-105${bike.category === 'Three Wheeler' ? ' scale-125' : ''}${bike.name === 'Pulsar NS400Z' ? ' mt-8' : ''}`}
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
                             target.style.display = 'none';
@@ -411,10 +423,7 @@ export default function AkrSonsBikeStore() {
                             <Button 
                               variant="outline"
                               className="w-full sm:flex-1"
-                              onClick={() => {
-                                setSelectedBike(bike);
-                                setShowSlideshow(true);
-                              }}
+                              onClick={() => handleViewDetails(bike)}
                             >
                               <Eye className="w-4 h-4 mr-2" />
                               View Details
@@ -438,33 +447,47 @@ export default function AkrSonsBikeStore() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact & Leadership Section */}
       <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8 bg-white/50 backdrop-blur-sm">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-old-english text-gray-800 mb-8">
-            Get in Touch
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="space-y-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto">
-                <Phone className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-800">Call Us</h3>
-              <p className="text-gray-600">+94 11 234 5678</p>
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Contact Information */}
+          <div className="p-6 bg-white rounded shadow">
+            <h2 className="text-xl font-bold text-cyan-700 mb-4">Contact Information</h2>
+            <div className="mb-2 flex items-center gap-2">
+              <Phone className="w-4 h-4 text-cyan-600" />
+              <span>Murunkan: 0232231222</span>
             </div>
-            <div className="space-y-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center mx-auto">
-                <Mail className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-800">Email Us</h3>
-              <p className="text-gray-600">info@akrsons.lk</p>
+            <div className="mb-2 flex items-center gap-2">
+              <Phone className="w-4 h-4 text-cyan-600" />
+              <span>Mannar: (023) 205 1536</span>
             </div>
-            <div className="space-y-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto">
-                <MapPin className="w-6 h-6 text-white" />
+            <div className="mb-2 flex items-center gap-2">
+              <Phone className="w-4 h-4 text-cyan-600" />
+              <span>Mobile: 0773111266</span>
+            </div>
+            <div className="mb-2 flex items-center gap-2">
+              <Mail className="w-4 h-4 text-cyan-600" />
+              <span>akrfuture@gmail.com</span>
+            </div>
+          </div>
+          {/* Leadership Team */}
+          <div className="p-6 bg-white rounded shadow">
+            <h2 className="text-xl font-bold text-cyan-700 mb-4">Leadership Team</h2>
+            <div>
+              <span className="font-semibold text-gray-900">Founder</span><br />
+              <span className="text-cyan-700 font-bold">S. Anton</span>
+            </div>
+            <div className="mt-4">
+              <span className="font-semibold text-gray-900">Chief Executive Officer</span><br />
+              <span className="text-cyan-700 font-bold">Anton Rojar Stalin</span>
+              <div className="flex items-center gap-2 mt-1">
+                <Phone className="w-4 h-4 text-cyan-600" />
+                <span>0773111266</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-800">Visit Us</h3>
-              <p className="text-gray-600">Colombo, Sri Lanka</p>
+              <div className="flex items-center gap-2 mt-1">
+                <Mail className="w-4 h-4 text-cyan-600" />
+                <span>antonrojarstalin@gmail.com</span>
+              </div>
             </div>
           </div>
         </div>
@@ -494,6 +517,105 @@ export default function AkrSonsBikeStore() {
             setSelectedBike(null)
           }}
         />
+      )}
+
+      {/* N160 Details Modal */}
+      {showN160Details && selectedBike && selectedBike.name === "Pulsar N160" && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+          <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full p-8 overflow-y-auto max-h-[90vh] relative">
+            <button className="absolute top-4 right-4 text-gray-500 hover:text-gray-800" onClick={() => setShowN160Details(false)}>
+              <span className="text-2xl">&times;</span>
+            </button>
+            <h1 className="text-3xl font-bold mb-4 text-blue-700">PULSAR N160 FI DUAL ABS</h1>
+            <h2 className="text-xl font-semibold mb-2 text-blue-700">Variants</h2>
+            <div className="mb-4 text-black">N160 FI Dual ABS</div>
+            <h2 className="text-xl font-semibold mb-2 text-blue-700">Features</h2>
+            <div className="mb-4 text-black">
+              <b>Performance</b><br/>
+              The New Gold Standard Of 160cc<br/>
+              The new refined engine of pulsar n 160 dual abs<br/>
+              <b>All-New Refined Engine</b><br/>
+              Own the streets with the intoxicating acceleration and everyday rideability of the new refined engine on the Pulsar N160 FI Dual ABS.<br/>
+              <b>Torque on Demand</b><br/>
+              Never run out of juice with the Pulsar N160 FI Dual ABS. A wide torque band offers 85% of peak power over a wider rev range - more than any other motorcycle in the segment.
+            </div>
+            <h2 className="text-xl font-semibold mb-2 text-blue-700">Design</h2>
+            <div className="mb-4 text-black">
+              <b>Dual Tone</b><br/>
+              Pulsar N160 FI Dual ABS. features a dynamic interplay of premium metallised dual colours. Darker in the front and lighter towards the rear, it emphasises the contours of the beast.<br/>
+              <b>LED Tail Lamp</b><br/>
+              Pulsar N160 FI Dual ABS features an evolved LED tail lamp with a Ruby crystal dust pattern—lighting up the roads with unmistakable style.
+            </div>
+            <h2 className="text-xl font-semibold mb-2 text-blue-700">Technology</h2>
+            <div className="mb-4 text-black">
+              <b>Best in class suspension</b><br/>
+              Tackling streets is a breezy affair with the Pulsar N160 FI Dual ABS, thanks to its best-in-class 37 mm telescopic front forks that ensure great handling and agility.<br/>
+              <b>Bi-functional LED Projector Lamp</b><br/>
+              Pulsar N160 FI Dual ABS features a bi-functional LED projector lamp flanked by signature Naked Wolf LED DRLs—offering unmatched illumination and a precise beam for improved safety.
+            </div>
+            <h2 className="text-xl font-semibold mb-2 text-blue-700">Safety</h2>
+            <div className="mb-4 text-black">
+              <b>Dual Channel ABS Braking</b><br/>
+              Pulsar N160 FI Dual ABS introduces Dual Channel ABS to Sri Lanka's 160cc sports bike segment, preventing wheel lock by automatically reducing brake pressure for enhanced control.<br/>
+              <b>Best in Class Braking</b><br/>
+              Pulsar N160 FI Dual ABS offers best-in-class braking with razor-sharp, responsive Dual Channel ABS, paired with wider 300mm front and 230mm rear disc brakes. Take corners with ease, and ride confidently.
+            </div>
+            <h2 className="text-xl font-semibold mb-2 text-blue-700">Specifications</h2>
+            <div className="mb-4 text-black">
+              <b>Engine</b><br/>
+              Displacement - 164.82 cc<br/>
+              Fuel system - EPM FI<br/>
+              Power (PS@rpm) - 16 PS @ 8750 rpm<br/>
+              Torque (Nm@rpm) - 14.65 Nm @ 6750 rpm<br/>
+              Starting (Electric / Kick) - electric<br/>
+              Transmission - 5-speed, 1 down 4 up<br/>
+              Valves, Cooling - 2, Oil cooled<br/>
+              <b>Brakes & Tyres</b><br/>
+              Braking System - Dual channel ABS<br/>
+              Frame type - Tubular frame (EASM)<br/>
+              Front Brake (type, size) - Disc – 300 mm<br/>
+              Front Tyres (size) - 100 / 80 -17 tubeless<br/>
+              Front suspension - Telescopic – 37mm<br/>
+              Fuel Tank (litres) - 14<br/>
+              Rear Brake (type, size) - Disc – 230 mm<br/>
+              Rear Tyres (size) - 130 / 70 - 17 tubeless<br/>
+              Rear suspension - Mono-shock, 5-step<br/>
+              <b>Electricals</b><br/>
+              App connect - Bajaj Ride Connect<br/>
+              Battery (V & Ah) - 12V, 4Ah<br/>
+              Form - Naked Sports<br/>
+              Fuel gauge -Digital bars<br/>
+              Head Lamp - Bi-function projector LED<br/>
+              Horn (single/dual) - Single<br/>
+              Indicators - Bulb, 10W<br/>
+              Speedometer - Digital<br/>
+              <b>Vehicle</b><br/>
+              Kerb weight (Kg) - 164<br/>
+              Length x width x  height (mm) - 1989 mm x 743 mm x 1050 mm<br/>
+              Saddle Height (mm) - 795<br/>
+              Wheelbase (mm) - 1358
+            </div>
+            <h2 className="text-xl font-semibold mb-2 text-blue-700">Frequently Asked Questions</h2>
+            <div className="mb-4 text-black">
+              <b>What is the power output of Pulsar N160 FI Dual ABS?</b><br/>
+              16 PS @ 8750 rpm<br/>
+              <b>What is the engine capacity of the Pulsar N160 FI Dual ABS?</b><br/>
+              164.82 cc<br/>
+              <b>What is the fuel tank capacity of Pulsar N160 FI Dual ABS?</b><br/>
+              14 litres<br/>
+              <b>What are the colour options available in the Pulsar N160 FI Dual ABS?</b><br/>
+              Brooklyn-Black<br/>
+              <b>Does Pulsar N160 FI Dual ABS feature a digital instrument cluster?</b><br/>
+              Yes
+            </div>
+            <h2 className="text-xl font-semibold mb-2 text-blue-700">Reach Us</h2>
+            <div className="mb-4 text-black">
+              DPMC -<br/>
+              info@dpmco.com<br/>
+              0094 11 4 700 600
+            </div>
+          </div>
+        </div>
       )}
     </div>
   )

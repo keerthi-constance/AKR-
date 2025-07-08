@@ -50,10 +50,16 @@ export function CompanyCard({ name, description, icon, image }: CompanyCardProps
               window.location.href = "/akr-sons-bike-store"
             } else if (name === "AKR Multi Complex") {
               window.location.href = "/akr-multi-complex"
+            } else if (name === "AKR Construction") {
+              window.location.href = "/akr-construction"
             }
           }}
         >
-          {name === "AKR & SONS (PVT) LTD" ? "Visit Bike Store" : "Visit"}
+          {name === "AKR & SONS (PVT) LTD"
+            ? "Visit Bike Store"
+            : name === "AKR Construction"
+            ? "Visit Construction"
+            : "Visit"}
         </Button>
       </div>
     </Card>

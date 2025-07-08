@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { CompanyCard } from "@/components/CompanyCard"
 import { HeroSlideshow } from "@/components/HeroSlideshow"
+import { Phone, Mail } from "lucide-react"
+import { Link } from "react-router-dom"
 
 const companies = [
   {
@@ -390,12 +392,15 @@ export default function Index() {
                     <h4 className="font-semibold text-gray-800 mb-2">Phone Numbers</h4>
                     <div className="space-y-2 text-gray-600">
                       <p>
+                        <Phone className="inline w-4 h-4 mr-1 text-cyan-600 align-text-bottom" />
                         Murunkan: <span className="text-gray-800 font-medium">0232231222</span>
                       </p>
                       <p>
+                        <Phone className="inline w-4 h-4 mr-1 text-cyan-600 align-text-bottom" />
                         Mannar: <span className="text-gray-800 font-medium">(023) 205 1536</span>
                       </p>
                       <p>
+                        <Phone className="inline w-4 h-4 mr-1 text-cyan-600 align-text-bottom" />
                         Mobile: <span className="text-gray-800 font-medium">0773111266</span>
                       </p>
                     </div>
@@ -403,6 +408,7 @@ export default function Index() {
                   <div>
                     <h4 className="font-semibold text-gray-800 mb-2">Email</h4>
                     <p className="text-gray-600">
+                      <Mail className="inline w-4 h-4 mr-1 text-cyan-600 align-text-bottom" />
                       <span className="text-gray-800 font-medium">akrfuture@gmail.com</span>
                     </p>
                   </div>
@@ -415,11 +421,11 @@ export default function Index() {
                 <div className="space-y-6">
                   <div>
                     <h4 className="font-semibold text-gray-800">Founder</h4>
-                    <p className="text-lg gradient-text-secondary">S. Anton</p>
+                    <p className="text-lg text-gray-900 font-bold">S. Anton</p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">Chief Executive Officer</h4>
-                    <p className="text-lg gradient-text-secondary mb-2">Anton Rojar Stalin</p>
+                    <p className="text-lg text-gray-900 font-bold mb-2">Anton Rojar Stalin</p>
                     <div className="text-sm text-gray-600 space-y-1">
                       <p>
                         Mobile: <span className="text-gray-800 font-medium">0773111266</span>

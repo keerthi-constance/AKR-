@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import AkrSonsBikeStore from "./pages/AkrSonsBikeStore";
 import NotFound from "./pages/NotFound";
 import AkrMultiComplex from "./pages/AkrMultiComplex";
+import HotelRooms from "./pages/HotelRooms";
+import AkrConstruction from "./pages/AkrConstruction";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +22,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/akr-sons-bike-store" element={<AkrSonsBikeStore />} />
           <Route path="/akr-multi-complex" element={<AkrMultiComplex />} />
+          <Route path="/multi-complex/hotel-rooms" element={<HotelRooms />} />
+          <Route path="/akr-construction" element={<AkrConstruction />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

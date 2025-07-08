@@ -62,13 +62,58 @@ const facilities = [
     name: "AKR Service Center",
     description: "Professional service center for vehicle maintenance and repairs.",
     icon: <Wrench className="w-8 h-8 text-yellow-500" />, 
-    image: "/images/AKR Service Center.jpeg",
+    image: "/images/service-center.jpg",
     features: ["Certified mechanics", "Genuine parts", "Quick service", "Customer lounge", "Warranty support"],
     specifications: {
       bays: "10",
       services: "All brands",
       openHours: "8am - 8pm"
     }
+  }
+];
+
+const rooms = [
+  {
+    id: 1,
+    name: "Deluxe Suite",
+    price: "LKR 18,000/night",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
+    // ...rest of the data
+  },
+  {
+    id: 2,
+    name: "Executive Room",
+    price: "LKR 14,000/night",
+    image: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=400&q=80",
+    // ...
+  },
+  {
+    id: 3,
+    name: "Family Suite",
+    price: "LKR 22,000/night",
+    image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
+    // ...
+  },
+  {
+    id: 4,
+    name: "Standard Room",
+    price: "LKR 10,000/night",
+    image: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=400&q=80",
+    // ...
+  },
+  {
+    id: 5,
+    name: "Premium Suite",
+    price: "LKR 25,000/night",
+    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400&q=80",
+    // ...
+  },
+  {
+    id: 6,
+    name: "Twin Room",
+    price: "LKR 12,000/night",
+    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+    // ...
   }
 ];
 
@@ -134,7 +179,16 @@ export default function AkrMultiComplex() {
                     {facility.name}
                   </h3>
                   <p className="text-gray-600 text-sm mb-2">{facility.description}</p>
-                  <Button className="w-full bg-gradient-primary hover:bg-gradient-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105" onClick={() => setSelectedFacility(facility)}>
+                  <Button
+                    className="w-full bg-gradient-primary hover:bg-gradient-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105"
+                    onClick={() => {
+                      if (facility.name === "Hotel & Rooms") {
+                        navigate("/multi-complex/hotel-rooms");
+                      } else {
+                        setSelectedFacility(facility);
+                      }
+                    }}
+                  >
                     View Details
                   </Button>
                 </div>
