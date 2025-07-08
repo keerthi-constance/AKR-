@@ -9,310 +9,219 @@ import { BookingForm } from "@/components/BookingForm"
 import { ColorSelector } from "@/components/ColorSelector"
 
 const bikes = [
+  // Pulsar Category
   {
-    id: 1,
-    name: "Honda CG 125",
-    price: "Rs. 185,000",
-    image: "/images/bikes/CG-125.jpg",
-    category: "Commuter",
-    rating: 4.5,
-    features: ["Fuel Efficient", "Low Maintenance", "Reliable Engine"],
-    description: "The Honda CG 125 is a legendary commuter motorcycle known for its exceptional fuel efficiency and low maintenance requirements. Perfect for daily commuting with its reliable engine and comfortable riding position.",
+    id: 3,
+    name: "Pulsar NS400Z",
+    price: "LKR 2,239,950.00",
+    image: "/images/bikes/pulsar-ns400z.png",
+    category: "Pulsar",
+    rating: 4.8,
+    features: ["Top Performance", "Advanced Tech"],
+    description: "PULSAR NS400 Z\nEngine 373.27 cc\nMax. Power 40 PS\nMax. Torque 35 NM\nExplore",
     specifications: {
-      engine: "124.7cc, Air-cooled, 4-stroke",
-      mileage: "60-65 km/l",
-      fuelCapacity: "13.5 liters",
-      transmission: "4-speed manual",
-      power: "10.7 bhp @ 7500 rpm",
-      weight: "118 kg"
+      engine: "373.27 cc",
+      power: "40 PS",
+      torque: "35 NM",
+      mileage: "35 km/l",
+      fuelCapacity: "13 liters",
+      transmission: "6-speed manual",
+      weight: "170 kg"
     },
-    colors: ["#FF0000", "#0000FF", "#000000", "#FFFFFF"],
+    colors: ["#E53935", "#231F20", "#F4F4F4", "#BDBDBD"],
     colorOptions: [
-      {
-        name: "Red",
-        value: "red",
-        hex: "#FF0000",
-        image: "/images/bikes/honda-cg125-red.jpg",
-        available: true
-      },
-      {
-        name: "Blue",
-        value: "blue",
-        hex: "#0000FF",
-        image: "/images/bikes/honda-cg125-blue.jpg",
-        available: true
-      },
-      {
-        name: "Black",
-        value: "black",
-        hex: "#000000",
-        image: "/images/bikes/honda-cg125-black.jpg",
-        available: true
-      },
-      {
-        name: "White",
-        value: "white",
-        hex: "#FFFFFF",
-        image: "/images/bikes/honda-cg125-white.jpg",
-        available: false
-      }
+      { name: "Red", value: "red", hex: "#E53935", image: "/images/bikes/sample-pulsor-ns400-red.jpg", available: true },
+      { name: "Black", value: "black", hex: "#231F20", image: "/images/bikes/sample-pulsor-ns400-black.jpg", available: true },
+      { name: "White", value: "white", hex: "#F4F4F4", image: "/images/bikes/sample-pulsor-ns400-white.jpg", available: true },
+      { name: "Grey", value: "grey", hex: "#BDBDBD", image: "/images/bikes/sample-pulsor-ns400-grey.jpg", available: true }
     ]
   },
-      {
-      id: 2,
-      name: "Yamaha YBR 125",
-      price: "Rs. 195,000",
-      image: "/images/bikes/Yamaha YBR 125.png",
-      category: "Commuter",
-      rating: 4.3,
-      features: ["Smooth Ride", "Good Mileage", "Stylish Design"],
-      description: "The Yamaha YBR 125 offers a perfect blend of style and performance. With its modern design and smooth engine, it provides an excellent riding experience for both city and highway use.",
-      specifications: {
-        engine: "123.7cc, Air-cooled, 4-stroke",
-        mileage: "55-60 km/l",
-        fuelCapacity: "12 liters",
-        transmission: "4-speed manual",
-        power: "11.2 bhp @ 7500 rpm",
-        weight: "120 kg"
-      },
-      colors: ["#000000", "#FF0000", "#0000FF", "#808080"],
-      colorOptions: [
-        {
-          name: "Red",
-          value: "red",
-          hex: "#FF0000",
-          image: "/images/bikes/yamaha-ybr125-red.jpg",
-          available: true
-        },
-        {
-          name: "Blue",
-          value: "blue",
-          hex: "#0000FF",
-          image: "/images/bikes/yamaha-ybr125-blue.jpg",
-          available: true
-        },
-        {
-          name: "Black",
-          value: "black",
-          hex: "#000000",
-          image: "/images/bikes/yamaha-ybr125-black.jpg",
-          available: true
-        },
-        {
-          name: "Gray",
-          value: "gray",
-          hex: "#808080",
-          image: "/images/bikes/yamaha-ybr125.jpg",
-          available: false
-        }
-      ]
+  {
+    id: 4,
+    name: "Pulsar NS200",
+    price: "LKR 1,139,950.00",
+    image: "/images/bikes/brand-new-pulsar-ns200.png",
+    category: "Pulsar",
+    rating: 4.7,
+    features: ["Aggressive Design", "High Power"],
+    description: "Pulsar ns 200 in cocktail wine red color\nPULSAR NS200\nEngine 199.5 cc\nMax. Power 23.50 PS\nMax. Torque 18.3 NM\nExplore",
+    specifications: {
+      engine: "199.5 cc",
+      power: "23.50 PS",
+      torque: "18.3 NM",
+      mileage: "40 km/l",
+      fuelCapacity: "12 liters",
+      transmission: "6-speed manual",
+      weight: "156 kg"
     },
-      {
-      id: 3,
-      name: "Suzuki GS 125",
-      price: "Rs. 175,000",
-      image: "/images/bikes/Suzuki GS 125.jpg",
-      category: "Commuter",
-      rating: 4.4,
-      features: ["Durable", "Easy Handling", "Affordable"],
-      description: "The Suzuki GS 125 is built for durability and reliability. Its robust construction and easy handling make it an ideal choice for riders who value practicality and affordability.",
-      specifications: {
-        engine: "124cc, Air-cooled, 4-stroke",
-        mileage: "58-63 km/l",
-        fuelCapacity: "12.5 liters",
-        transmission: "4-speed manual",
-        power: "10.5 bhp @ 7500 rpm",
-        weight: "115 kg"
-      },
-      colors: ["#000000", "#FF0000", "#0000FF", "#FFFFFF"],
-      colorOptions: [
-        {
-          name: "Red",
-          value: "red",
-          hex: "#FF0000",
-          image: "/images/bikes/suzuki-gs125-red.jpg",
-          available: true
-        },
-        {
-          name: "Blue",
-          value: "blue",
-          hex: "#0000FF",
-          image: "/images/bikes/suzuki-gs125-blue.jpg",
-          available: true
-        },
-        {
-          name: "Black",
-          value: "black",
-          hex: "#000000",
-          image: "/images/bikes/suzuki-gs125.jpg",
-          available: true
-        },
-        {
-          name: "White",
-          value: "white",
-          hex: "#FFFFFF",
-          image: "/images/bikes/suzuki-gs125.jpg",
-          available: false
-        }
-      ]
+    colors: ["#8B0000", "#000000", "#1976D2", "#F4F4F4"],
+    colorOptions: [
+      { name: "Maroon", value: "maroon", hex: "#8B0000", image: "/images/bikes/sample-pulsor-ns200-maroon.jpg", available: true },
+      { name: "Black", value: "black", hex: "#000000", image: "/images/bikes/sample-pulsor-ns200-black.jpg", available: true },
+      { name: "Blue", value: "blue", hex: "#1976D2", image: "/images/bikes/sample-pulsor-ns200-blue.jpg", available: true },
+      { name: "White", value: "white", hex: "#F4F4F4", image: "/images/bikes/sample-pulsor-ns200-white.jpg", available: true }
+    ]
+  },
+  {
+    id: 5,
+    name: "Pulsar N160 Premium",
+    price: "LKR 995,950.00",
+    image: "/images/bikes/brand-new-pulsar-n160-premium1.png",
+    category: "Pulsar",
+    rating: 4.6,
+    features: ["Premium Features", "High Performance"],
+    description: "Premium version of Pulsar N160 with advanced features.",
+    specifications: {
+      engine: "164.82 cc",
+      power: "15.7 PS",
+      torque: "14.65 Nm",
+      mileage: "54 km/l",
+      fuelCapacity: "12 liters",
+      transmission: "5-speed manual",
+      weight: "154 kg"
     },
-      {
-      id: 4,
-      name: "Honda CD 70",
-      price: "Rs. 95,000",
-      image: "/images/bikes/Honda CD 70.jpg",
-      category: "Economy",
-      rating: 4.6,
-      features: ["Ultra Fuel Efficient", "Perfect for City", "Low Cost"],
-      description: "The Honda CD 70 is the most fuel-efficient motorcycle in its class. Perfect for city commuting with its compact size and excellent fuel economy, making it the most economical choice.",
-      specifications: {
-        engine: "70cc, Air-cooled, 4-stroke",
-        mileage: "70-75 km/l",
-        fuelCapacity: "8 liters",
-        transmission: "4-speed manual",
-        power: "5.5 bhp @ 7500 rpm",
-        weight: "95 kg"
-      },
-      colors: ["#000000", "#FF0000", "#0000FF", "#FFFFFF"],
-      colorOptions: [
-        {
-          name: "Red",
-          value: "red",
-          hex: "#FF0000",
-          image: "/images/bikes/honda-cd70-red.jpg",
-          available: true
-        },
-        {
-          name: "Blue",
-          value: "blue",
-          hex: "#0000FF",
-          image: "/images/bikes/honda-cd70-blue.jpg",
-          available: true
-        },
-        {
-          name: "Black",
-          value: "black",
-          hex: "#000000",
-          image: "/images/bikes/honda-cd70.jpg",
-          available: true
-        },
-        {
-          name: "White",
-          value: "white",
-          hex: "#FFFFFF",
-          image: "/images/bikes/honda-cd70.jpg",
-          available: false
-        }
-      ]
+    colors: ["#F4F4F4", "#E53935", "#1976D2", "#231F20"],
+    colorOptions: [
+      { name: "White", value: "white", hex: "#F4F4F4", image: "/images/bikes/sample-pulsor-n160-premium-white.jpg", available: true },
+      { name: "Red", value: "red", hex: "#E53935", image: "/images/bikes/sample-pulsor-n160-premium-red.jpg", available: true },
+      { name: "Blue", value: "blue", hex: "#1976D2", image: "/images/bikes/sample-pulsor-n160-premium-blue.jpg", available: true },
+      { name: "Black", value: "black", hex: "#231F20", image: "/images/bikes/sample-pulsor-n160-premium-black.jpg", available: true }
+    ]
+  },
+  {
+    id: 6,
+    name: "Pulsar N160",
+    price: "LKR 934,950.00",
+    image: "/images/bikes/brand-new-pulsar-n1601.png",
+    category: "Pulsar",
+    rating: 4.5,
+    features: ["Powerful", "Modern"],
+    description: "Pulsar n 160 in pearl metallic white color\nPULSAR N160\nEngine 164.82 cc\nMax. Power 15.7 PS\nMax. Torque 14.65 Nm\nExplore",
+    specifications: {
+      engine: "164.82 cc",
+      power: "15.7 PS",
+      torque: "14.65 Nm",
+      mileage: "55 km/l",
+      fuelCapacity: "12 liters",
+      transmission: "5-speed manual",
+      weight: "152 kg"
     },
-      {
-      id: 5,
-      name: "Yamaha YB 100",
-      price: "Rs. 85,000",
-      image: "/images/bikes/Yamaha YB 100.png",
-      category: "Economy",
-      rating: 4.2,
-      features: ["Lightweight", "Easy to Ride", "Budget Friendly"],
-      description: "The Yamaha YB 100 is designed for beginners and budget-conscious riders. Its lightweight design and easy handling make it perfect for learning and daily commuting.",
-      specifications: {
-        engine: "98cc, Air-cooled, 4-stroke",
-        mileage: "65-70 km/l",
-        fuelCapacity: "10 liters",
-        transmission: "4-speed manual",
-        power: "7.5 bhp @ 7500 rpm",
-        weight: "90 kg"
-      },
-      colors: ["#000000", "#FF0000", "#0000FF", "#808080"],
-      colorOptions: [
-        {
-          name: "Red",
-          value: "red",
-          hex: "#FF0000",
-          image: "/images/bikes/yamaha-yb100-red.jpg",
-          available: true
-        },
-        {
-          name: "Black",
-          value: "black",
-          hex: "#000000",
-          image: "/images/bikes/yamaha-yb100.jpg",
-          available: true
-        },
-        {
-          name: "Blue",
-          value: "blue",
-          hex: "#0000FF",
-          image: "/images/bikes/yamaha-yb100.jpg",
-          available: true
-        },
-        {
-          name: "Gray",
-          value: "gray",
-          hex: "#808080",
-          image: "/images/bikes/yamaha-yb100.jpg",
-          available: false
-        }
-      ]
+    colors: ["#000000"],
+    colorOptions: [
+      { name: "Black", value: "black", hex: "#000000", image: "/images/bikes/sample-pulsor-n160-black.jpg", available: true }
+    ]
+  },
+  {
+    id: 7,
+    name: "Pulsar N125",
+    price: "LKR 844,950.00",
+    image: "/images/bikes/brand-new-pulsar-n125.png",
+    category: "Pulsar",
+    rating: 4.4,
+    features: ["Sporty", "Efficient"],
+    description: "Pulsar n125 in citrus rush color\nPULSAR N125\nEngine 164.82 cc\nMax. Power 15.7 PS\nMax. Torque 14.65 Nm\nExplore",
+    specifications: {
+      engine: "164.82 cc",
+      power: "15.7 PS",
+      torque: "14.65 Nm",
+      mileage: "60 km/l",
+      fuelCapacity: "11.5 liters",
+      transmission: "5-speed manual",
+      weight: "140 kg"
     },
-      {
-      id: 6,
-      name: "Suzuki GD 110",
-      price: "Rs. 105,000",
-      image: "/images/bikes/Suzuki GD 110.jpg",
-      category: "Economy",
-      rating: 4.4,
-      features: ["Good Performance", "Reliable", "Value for Money"],
-      description: "The Suzuki GD 110 offers excellent value for money with its reliable performance and modern features. It's perfect for riders who want quality without breaking the bank.",
-      specifications: {
-        engine: "112.8cc, Air-cooled, 4-stroke",
-        mileage: "60-65 km/l",
-        fuelCapacity: "11 liters",
-        transmission: "4-speed manual",
-        power: "8.5 bhp @ 7500 rpm",
-        weight: "105 kg"
-      },
-      colors: ["#000000", "#FF0000", "#0000FF", "#FFFFFF"],
-      colorOptions: [
-        {
-          name: "Red",
-          value: "red",
-          hex: "#FF0000",
-          image: "/images/bikes/suzuki-gd110-red.jpg",
-          available: true
-        },
-        {
-          name: "Black",
-          value: "black",
-          hex: "#000000",
-          image: "/images/bikes/suzuki-gd110.jpg",
-          available: true
-        },
-        {
-          name: "Blue",
-          value: "blue",
-          hex: "#0000FF",
-          image: "/images/bikes/suzuki-gd110.jpg",
-          available: true
-        },
-        {
-          name: "White",
-          value: "white",
-          hex: "#FFFFFF",
-          image: "/images/bikes/suzuki-gd110.jpg",
-          available: false
-        }
-      ]
-    }
+    colors: ["#F7F48B", "#8B0000", "#F4F4F4", "#6C63FF"],
+    colorOptions: [
+      { name: "Yellow", value: "yellow", hex: "#F7F48B", image: "/images/bikes/sample-pulsor-n125-yellow.jpg", available: true },
+      { name: "Maroon", value: "maroon", hex: "#8B0000", image: "/images/bikes/sample-pulsor-n125-maroon.jpg", available: true },
+      { name: "White", value: "white", hex: "#F4F4F4", image: "/images/bikes/sample-pulsor-n125-white.jpg", available: true },
+      { name: "Purple", value: "purple", hex: "#6C63FF", image: "/images/bikes/sample-pulsor-n125-purple.jpg", available: true }
+    ]
+  },
+  // CT 100 & Discover Category
+  {
+    id: 1,
+    name: "CT 100 ES",
+    price: "LKR 637,950.00",
+    image: "/images/bikes/ct-100-es.png",
+    category: "CT 100 & Discover",
+    rating: 4.2,
+    features: ["Fuel Efficient", "Reliable"],
+    description: "Bajaj CT 100 is known for its mileage and reliability.",
+    specifications: {
+      engine: "102 cc",
+      power: "7.7 Ps",
+      torque: "8.24 Nm",
+      mileage: "75 km/l",
+      fuelCapacity: "10.5 liters",
+      transmission: "4-speed manual",
+      weight: "115 kg"
+    },
+    colors: ["#FF0000", "#8B0000", "#393D87"],
+    colorOptions: [
+      { name: "Red", value: "red", hex: "#FF0000", image: "/images/bikes/sample-ct100-red.jpg", available: true },
+      { name: "Maroon", value: "maroon", hex: "#8B0000", image: "/images/bikes/sample-ct100-maroon.jpg", available: true },
+      { name: "Blue", value: "blue", hex: "#393D87", image: "/images/bikes/sample-ct100-blue.jpg", available: true }
+    ]
+  },
+  {
+    id: 2,
+    name: "Discover 125 DRL",
+    price: "LKR 731,950.00",
+    image: "/images/bikes/discover-125-drl1.png",
+    category: "CT 100 & Discover",
+    rating: 4.3,
+    features: ["Smooth Ride", "Good Mileage"],
+    description: "Bajaj Discover 125 is a popular commuter bike with good performance.",
+    specifications: {
+      engine: "124.5 cc",
+      power: "11 Ps",
+      torque: "11 Nm",
+      mileage: "65 km/l",
+      fuelCapacity: "8 liters",
+      transmission: "5-speed manual",
+      weight: "120 kg"
+    },
+    colors: ["#FF0000", "#8B0000", "#393D87"],
+    colorOptions: [
+      { name: "Red", value: "red", hex: "#FF0000", image: "/images/bikes/sample-discover-red.jpg", available: true },
+      { name: "Maroon", value: "maroon", hex: "#8B0000", image: "/images/bikes/sample-discover-maroon.jpg", available: true },
+      { name: "Blue", value: "blue", hex: "#393D87", image: "/images/bikes/sample-discover-blue.jpg", available: true }
+    ]
+  },
+  // Three Wheeler Category
+  {
+    id: 8,
+    name: "Bajaj RE",
+    price: "LKR 1,995,000.00",
+    image: "/images/bikes/brand-new-bajaj-re.png",
+    category: "Three Wheeler",
+    rating: 4.5,
+    features: ["Spacious", "Durable"],
+    description: "Bajaj RE is ideal for commercial and family use.",
+    specifications: {
+      engine: "198.88cc, 4-stroke",
+      mileage: "35 km/l",
+      fuelCapacity: "10 liters",
+      transmission: "4-speed manual",
+      power: "10.2 PS @ 5000 rpm",
+      weight: "350 kg"
+    },
+    colors: ["#E53935", "#388E3C"],
+    colorOptions: [
+      { name: "Red", value: "red", hex: "#E53935", image: "/images/bikes/sample-threewheeler-red.jpg", available: true },
+      { name: "Green", value: "green", hex: "#388E3C", image: "/images/bikes/sample-threewheeler-green.jpg", available: true }
+    ]
+  }
 ]
 
 export default function AkrSonsBikeStore() {
   const navigate = useNavigate()
   const [showSlideshow, setShowSlideshow] = useState(false)
   const [showBookingForm, setShowBookingForm] = useState(false)
-  const [selectedBike, setSelectedBike] = useState<{ name: string; price: string } | null>(null)
+  const [selectedBike, setSelectedBike] = useState<typeof bikes[0] | null>(null)
   const [selectedColors, setSelectedColors] = useState<{ [key: number]: any }>({})
 
-  const handleBookNow = (bike: { name: string; price: string }) => {
+  const handleBookNow = (bike: typeof bikes[0]) => {
     setSelectedBike(bike)
     setShowBookingForm(true)
   }
@@ -403,104 +312,129 @@ export default function AkrSonsBikeStore() {
       {/* Bikes Grid */}
       <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {bikes.map((bike) => (
-              <Card key={bike.id} className="glass-card p-6 cosmic-hover group overflow-hidden relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500">
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
-                
-                <div className="relative z-10 space-y-4">
-                  {/* Bike Image */}
-                  <div className="w-full h-48 rounded-xl overflow-hidden relative">
-                    <img
-                      src={getBikeImage(bike)}
-                      alt={bike.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                        target.nextElementSibling?.classList.remove('hidden');
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    {/* Fallback placeholder */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center hidden">
-                      <div className="text-gray-500 text-lg font-medium">Bike Image</div>
-                    </div>
-                  </div>
-
-                  {/* Color Selector for all bikes */}
-                  {bike.colorOptions && (
-                    <ColorSelector
-                      bikeName={bike.name}
-                      colors={bike.colorOptions}
-                      selectedColor={selectedColors[bike.id] || bike.colorOptions[0]}
-                      onColorChange={(color) => handleColorChange(bike.id, color)}
-                    />
-                  )}
-                  
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-start">
-                      <h3 className="text-xl font-old-english text-gray-800 group-hover:gradient-text transition-all duration-300">
-                        {bike.name}
-                      </h3>
-                      <Badge variant="outline" className="text-xs">
-                        {bike.category}
-                      </Badge>
-                    </div>
-                    
-                    <div className="flex items-center gap-2">
-                      <div className="flex items-center">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-4 h-4 ${
-                              i < Math.floor(bike.rating)
-                                ? "text-yellow-400 fill-current"
-                                : "text-gray-300"
-                            }`}
-                          />
-                        ))}
-                      </div>
-                      <span className="text-sm text-gray-600">({bike.rating})</span>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      {bike.features.map((feature, index) => (
-                        <div key={index} className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <span className="text-sm text-gray-600">{feature}</span>
+          {/* Group bikes by category */}
+          {[
+            "Pulsar",
+            "CT 100 & Discover",
+            "Three Wheeler"
+          ].map((category) => (
+            <div key={category} className="mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-700 mb-6 border-l-4 border-blue-500 pl-4">
+                {category}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {bikes.filter((bike) => bike.category === category).map((bike) => (
+                  <Card key={bike.id} className="glass-card p-6 cosmic-hover group overflow-hidden relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500">
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+                    <div className="relative z-10 space-y-4">
+                      {/* Bike Image */}
+                      <div className="w-full h-[30rem] rounded-xl overflow-hidden relative flex items-end justify-center">
+                        <img
+                          src={getBikeImage(bike)}
+                          alt={bike.name}
+                          className={`w-full h-full object-contain mx-auto relative z-20 transition-transform duration-500 group-hover:scale-105 ${bike.category === 'Three Wheeler' ? 'scale-125' : ''}`}
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                            target.nextElementSibling?.classList.remove('hidden');
+                          }}
+                        />
+                        {/* Fallback placeholder */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center hidden">
+                          <div className="text-gray-500 text-lg font-medium">Bike Image</div>
                         </div>
-                      ))}
-                    </div>
-                    
-                    <div className="pt-4">
-                      <div className="text-2xl font-bold text-gray-800 mb-4">
-                        {bike.price}
                       </div>
-                      <div className="flex flex-col gap-2 mt-2 sm:flex-row">
-                        <Button 
-                          variant="outline"
-                          className="w-full sm:flex-1"
-                          onClick={() => setShowSlideshow(true)}
-                        >
-                          <Eye className="w-4 h-4 mr-2" />
-                          View Details
-                        </Button>
-                        <Button 
-                          className="w-full sm:flex-1 bg-gradient-primary hover:bg-gradient-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105"
-                          onClick={() => handleBookNow({ name: bike.name, price: bike.price })}
-                        >
-                          <Calendar className="w-4 h-4 mr-2" />
-                          Book Now
-                        </Button>
+                      {/* Color Selector for all bikes */}
+                      {bike.colorOptions && (
+                        <ColorSelector
+                          bikeName={bike.name}
+                          colors={bike.colorOptions}
+                          selectedColor={selectedColors[bike.id] || bike.colorOptions[0]}
+                          onColorChange={(color) => handleColorChange(bike.id, color)}
+                        />
+                      )}
+                      <div className="space-y-3">
+                        <div className="flex justify-between items-start">
+                          <h3 className="text-xl font-old-english text-gray-800 group-hover:gradient-text transition-all duration-300">
+                            {bike.name}
+                          </h3>
+                          <Badge variant="outline" className="text-xs">
+                            {bike.category}
+                          </Badge>
+                        </div>
+                        {/* Pulsar: Show engine, power, torque. Others: show rating and features as before. */}
+                        {bike.category === 'Pulsar' ? (
+                          <div className="space-y-1">
+                            <div className="flex items-center gap-2 text-sm text-gray-700">
+                              <span className="font-semibold">Engine:</span> {bike.specifications.engine}
+                            </div>
+                            <div className="flex items-center gap-2 text-sm text-gray-700">
+                              <span className="font-semibold">Power:</span> {bike.specifications.power}
+                            </div>
+                            <div className="flex items-center gap-2 text-sm text-gray-700">
+                              <span className="font-semibold">Torque:</span> {bike.specifications.torque}
+                            </div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className="flex items-center gap-2">
+                              <div className="flex items-center">
+                                {[...Array(5)].map((_, i) => (
+                                  <Star
+                                    key={i}
+                                    className={`w-4 h-4 ${
+                                      i < Math.floor(bike.rating)
+                                        ? "text-yellow-400 fill-current"
+                                        : "text-gray-300"
+                                    }`}
+                                  />
+                                ))}
+                              </div>
+                              <span className="text-sm text-gray-600">({bike.rating})</span>
+                            </div>
+                            <div className="space-y-2">
+                              {bike.features.map((feature, index) => (
+                                <div key={index} className="flex items-center gap-2">
+                                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                  <span className="text-sm text-gray-600">{feature}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </>
+                        )}
+                        <div className="pt-4">
+                          <div className="text-2xl font-bold text-gray-800 mb-4">
+                            {bike.price}
+                          </div>
+                          <div className="flex flex-col gap-2 mt-2 sm:flex-row">
+                            <Button 
+                              variant="outline"
+                              className="w-full sm:flex-1"
+                              onClick={() => {
+                                setSelectedBike(bike);
+                                setShowSlideshow(true);
+                              }}
+                            >
+                              <Eye className="w-4 h-4 mr-2" />
+                              View Details
+                            </Button>
+                            <Button 
+                              className="w-full sm:flex-1 bg-gradient-primary hover:bg-gradient-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105"
+                              onClick={() => handleBookNow(bike)}
+                            >
+                              <Calendar className="w-4 h-4 mr-2" />
+                              Book Now
+                            </Button>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -537,10 +471,13 @@ export default function AkrSonsBikeStore() {
       </section>
 
       {/* Bike Details Slideshow */}
-      {showSlideshow && (
-        <BikeSlideshow 
-          bikes={bikes} 
-          onClose={() => setShowSlideshow(false)}
+      {showSlideshow && selectedBike && (
+        <BikeSlideshow
+          bikes={[selectedBike]}
+          onClose={() => {
+            setShowSlideshow(false);
+            setSelectedBike(null);
+          }}
           onBookNow={handleBookNow}
           selectedColors={selectedColors}
           onColorChange={handleColorChange}
