@@ -2,8 +2,15 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Phone } from "lucide-react";
+import { ArrowLeft, Phone, ChevronLeft, ChevronRight, Wifi, ParkingSquare, Tv, Coffee, Snowflake, ConciergeBell } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import React from "react";
+
+const defaultImages = [
+  "/images/Hotel & Rooms.jpg",
+  "/images/kitchen.jpeg",
+  "/images/bathroom.png"
+];
 
 const rooms = [
   {
@@ -12,9 +19,9 @@ const rooms = [
     price: "LKR 18,000/night",
     image: "/images/delux.jpeg",
     images: [
-      "/images/delux.jpeg",
-      "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=400&q=80", // bathroom
-      "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" // hall
+      "/images/Hotel & Rooms.jpg",
+      "/images/kitchen.jpeg",
+      "/images/bathroom.png"
     ],
     shortDesc: "Spacious suite with king bed, city view, and luxury amenities.",
     fullDesc: "Our Deluxe Suite offers a king-size bed, a private balcony with city views, a luxury bathroom, and a comfortable lounge area. Enjoy complimentary breakfast, Wi-Fi, and 24/7 room service.",
@@ -28,6 +35,7 @@ const rooms = [
     name: "Executive Room",
     price: "LKR 14,000/night",
     image: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=400&q=80",
+    images: defaultImages,
     shortDesc: "Modern executive room with workspace and premium comfort.",
     fullDesc: "The Executive Room is designed for business travelers, featuring a queen bed, ergonomic workspace, and high-speed internet. Includes access to the executive lounge and complimentary refreshments.",
     features: ["Queen Bed", "Workspace", "Executive Lounge Access", "Complimentary Refreshments"],
@@ -40,6 +48,7 @@ const rooms = [
     name: "Family Suite",
     price: "LKR 22,000/night",
     image: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=400&q=80",
+    images: defaultImages,
     shortDesc: "Large suite for families with two bedrooms and living area.",
     fullDesc: "Perfect for families, this suite features two bedrooms, a spacious living area, and a kitchenette. Enjoy privacy and comfort with all modern amenities and a beautiful garden view.",
     features: ["2 Bedrooms", "Living Area", "Kitchenette", "Garden View"],
@@ -53,9 +62,9 @@ const rooms = [
     price: "LKR 10,000/night",
     image: "/images/standard.jpeg",
     images: [
-      "/images/standard.jpeg",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80", // bathroom
-      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=400&q=80" // hall
+      "/images/Hotel & Rooms.jpg",
+      "/images/kitchen.jpeg",
+      "/images/bathroom.png"
     ],
     shortDesc: "Comfortable standard room with all essentials for a pleasant stay.",
     fullDesc: "Our Standard Room offers a cozy double bed, modern bathroom, and all the essentials for a comfortable stay. Ideal for solo travelers or couples.",
@@ -69,6 +78,7 @@ const rooms = [
     name: "Premium Suite",
     price: "LKR 25,000/night",
     image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400&q=80",
+    images: defaultImages,
     shortDesc: "Elegant suite with premium furnishings and exclusive services.",
     fullDesc: "The Premium Suite features elegant décor, a king-size bed, a private lounge, and exclusive butler service. Enjoy panoramic views and top-tier amenities.",
     features: ["King Bed", "Private Lounge", "Butler Service", "Panoramic View"],
@@ -82,9 +92,9 @@ const rooms = [
     price: "LKR 12,000/night",
     image: "/images/twin.jpeg",
     images: [
-      "/images/twin.jpeg",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80", // bathroom
-      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" // hall
+      "/images/Hotel & Rooms.jpg",
+      "/images/kitchen.jpeg",
+      "/images/bathroom.png"
     ],
     shortDesc: "Twin beds, ideal for friends or colleagues sharing a room.",
     fullDesc: "The Twin Room offers two comfortable single beds, a modern bathroom, and a workspace. Perfect for friends or colleagues traveling together.",
@@ -97,7 +107,39 @@ const rooms = [
 
 export default function HotelRooms() {
   const [selectedRoom, setSelectedRoom] = useState(null);
+  const [currentImageIdx, setCurrentImageIdx] = useState(0);
   const navigate = useNavigate();
+
+  // Reset image index when room changes
+  React.useEffect(() => {
+    setCurrentImageIdx(0);
+  }, [selectedRoom]);
+
+  // Helper for amenities icons
+  const amenityIcon = (amenity) => {
+    switch (amenity.toLowerCase()) {
+      case "wi-fi":
+      case "wifi":
+        return <Wifi className="w-6 h-6 text-purple-700" />;
+      case "free parking":
+      case "parking":
+        return <ParkingSquare className="w-6 h-6 text-purple-700" />;
+      case "flat screen tv":
+      case "tv":
+        return <Tv className="w-6 h-6 text-purple-700" />;
+      case "coffee maker":
+      case "coffee":
+        return <Coffee className="w-6 h-6 text-purple-700" />;
+      case "air conditioning":
+      case "ac":
+        return <Snowflake className="w-6 h-6 text-purple-700" />;
+      case "room service":
+        return <ConciergeBell className="w-6 h-6 text-purple-700" />;
+      default:
+        return <span className="w-6 h-6" />;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
       {/* Navigation */}
@@ -178,57 +220,80 @@ export default function HotelRooms() {
         {/* Room Details Modal */}
         {selectedRoom && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-            <div className="bg-white rounded-lg shadow-2xl w-[90vw] h-[90vh] max-w-5xl max-h-[90vh] p-0 relative animate-fadeIn flex flex-col overflow-hidden">
-              <button className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl z-10" onClick={() => setSelectedRoom(null)}>&times;</button>
-              {/* Collage Frame at the Top */}
-              <div className="flex flex-col items-center justify-center w-full pt-8 pb-4">
-                <div className="bg-white border-8 border-gray-700 rounded-xl shadow-lg p-2 w-[700px] max-w-full">
-                  <div className="flex gap-2 mb-2">
-                    <img src="/images/kitchen.jpeg" alt="Kitchen" className="w-1/2 h-40 object-cover rounded" />
-                    <img src="/images/bathroom.png" alt="Bathroom" className="w-1/2 h-40 object-cover rounded" />
+            <div className="bg-white rounded-lg shadow-2xl w-[95vw] sm:w-[90vw] h-[98vh] sm:h-[90vh] max-w-5xl max-h-[98vh] p-0 relative animate-fadeIn flex flex-col overflow-hidden">
+              <button className="absolute top-2 right-2 sm:top-4 sm:right-4 text-gray-500 hover:text-gray-800 text-2xl z-10" onClick={() => setSelectedRoom(null)}>&times;</button>
+              {/* Modal Content: image + text scroll together */}
+              <div className="overflow-y-auto h-full px-2 sm:px-8 py-4 sm:py-8 bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-b-lg shadow-inner">
+                {/* Image Slider */}
+                <div className="flex flex-col items-center justify-center w-full pt-4 sm:pt-8 pb-2 sm:pb-4 mb-2">
+                  <div className="relative w-full sm:w-[700px] max-w-full h-52 sm:h-80 flex items-center justify-center">
+                    {selectedRoom.images && selectedRoom.images.length > 0 ? (
+                      <>
+                        <button
+                          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-1 sm:p-2 shadow hover:bg-white z-10"
+                          onClick={() => setCurrentImageIdx((prev) => (prev === 0 ? selectedRoom.images.length - 1 : prev - 1))}
+                          aria-label="Previous image"
+                        >
+                          <ChevronLeft className="w-6 h-6 sm:w-7 sm:h-7" />
+                        </button>
+                        <img
+                          src={selectedRoom.images[currentImageIdx]}
+                          alt="Room"
+                          className="w-full h-52 sm:h-80 object-cover rounded-xl border-4 border-gray-200"
+                        />
+                        <button
+                          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-1 sm:p-2 shadow hover:bg-white z-10"
+                          onClick={() => setCurrentImageIdx((prev) => (prev === selectedRoom.images.length - 1 ? 0 : prev + 1))}
+                          aria-label="Next image"
+                        >
+                          <ChevronRight className="w-6 h-6 sm:w-7 sm:h-7" />
+                        </button>
+                        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1 sm:gap-2">
+                          {selectedRoom.images.map((_, idx) => (
+                            <span key={idx} className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${idx === currentImageIdx ? 'bg-purple-700' : 'bg-gray-300'}`}></span>
+                          ))}
+                        </div>
+                      </>
+                    ) : (
+                      <img src={selectedRoom.image} alt="Room" className="w-full h-52 sm:h-80 object-cover rounded-xl border-4 border-gray-200" />
+                    )}
                   </div>
-                  <img src={selectedRoom.image} alt="Room" className="w-full h-80 object-cover rounded" />
                 </div>
-              </div>
-              {/* Info below collage */}
-              <div className="flex-1 overflow-y-auto px-8 py-8 flex flex-col justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-b-lg shadow-inner">
-                <div className="mb-4 flex items-center justify-between">
-                  <h2 className="text-4xl font-extrabold text-gray-800">{selectedRoom.name}</h2>
-                  <span className="flex items-center gap-1 text-yellow-400 text-xl">
+                {/* Info below slider */}
+                <div className="mb-2 sm:mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                  <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-800">{selectedRoom.name}</h2>
+                  <span className="flex items-center gap-1 text-yellow-400 text-lg sm:text-xl mt-2 sm:mt-0">
                     {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.3 6.1,11.2 4.8,17.1 9.9,14.1 15,17.1 13.7,11.2 18.2,7.3 12.2,6.6 "/></svg>
+                      <svg key={i} className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.3 6.1,11.2 4.8,17.1 9.9,14.1 15,17.1 13.7,11.2 18.2,7.3 12.2,6.6 "/></svg>
                     ))}
                   </span>
                 </div>
-                <div className="flex flex-wrap gap-3 mb-4">
-                  <Badge className="text-lg px-4 py-2 bg-green-500 text-white">{selectedRoom.price}</Badge>
-                  <span className="bg-gray-200 px-3 py-1 rounded text-base">Size: {selectedRoom.size}</span>
-                  <span className="bg-gray-200 px-3 py-1 rounded text-base">Occupancy: {selectedRoom.occupancy}</span>
-                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded text-base font-semibold">Free Cancellation</span>
-                  <span className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded text-base font-semibold">Breakfast Included</span>
+                {/* Features Section */}
+                <div className="mb-4 sm:mb-8">
+                  <h3 className="text-lg sm:text-2xl font-serif text-[#b85c5c] mb-1 sm:mb-2 tracking-wider">FEATURES:</h3>
+                  <ul className="list-disc ml-4 sm:ml-6 text-base sm:text-lg text-gray-700">
+                    <li>Beds: {selectedRoom.features.find(f => f.toLowerCase().includes('bed')) || 'N/A'}</li>
+                    <li>Occupancy: {selectedRoom.occupancy}</li>
+                    <li>View: {selectedRoom.features.find(f => f.toLowerCase().includes('view')) || 'N/A'}</li>
+                  </ul>
                 </div>
-                <p className="text-gray-700 mb-6 text-lg leading-relaxed">{selectedRoom.fullDesc}</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  <div>
-                    <h3 className="font-semibold mb-2 text-lg flex items-center gap-2"><svg className="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a6 6 0 016 6c0 4.418-6 10-6 10S4 12.418 4 8a6 6 0 016-6zm0 8a2 2 0 100-4 2 2 0 000 4z"/></svg> Room Features</h3>
-                    <ul className="list-disc list-inside text-gray-600 text-base">
-                      {selectedRoom.features.map((feature, i) => (
-                        <li key={i}>{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-2 text-lg flex items-center gap-2"><svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 12H9v-2h2v2zm0-4H9V7h2v3z"/></svg> Amenities</h3>
-                    <ul className="list-disc list-inside text-gray-600 text-base">
-                      {selectedRoom.amenities.map((amenity, i) => (
-                        <li key={i}>{amenity}</li>
-                      ))}
-                    </ul>
+                {/* Amenities Section */}
+                <div className="mb-4 sm:mb-8">
+                  <h3 className="text-lg sm:text-2xl font-serif text-[#b85c5c] mb-2 sm:mb-4 tracking-wider">AMENITIES:</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
+                    {selectedRoom.amenities.map((amenity, i) => (
+                      <div key={i} className="flex items-center gap-2 sm:gap-3 text-base sm:text-lg text-gray-700">
+                        {amenityIcon(amenity)}
+                        <span>{amenity}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-                <div className="flex justify-center mt-6 gap-6">
-                  <Button className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-xl px-12 py-4 shadow-xl rounded-full font-bold uppercase tracking-wide">Book Now</Button>
-                  <Button className="bg-gradient-to-r from-blue-400 to-green-500 hover:from-blue-500 hover:to-green-600 text-xl px-10 py-4 shadow-xl rounded-full font-bold uppercase tracking-wide">Contact</Button>
+                {/* Description */}
+                <p className="text-gray-700 mb-4 sm:mb-6 text-base sm:text-lg leading-relaxed">{selectedRoom.fullDesc}</p>
+                <div className="flex flex-col sm:flex-row justify-center mt-4 sm:mt-6 gap-3 sm:gap-6">
+                  <Button className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-base sm:text-xl px-6 sm:px-12 py-3 sm:py-4 shadow-xl rounded-full font-bold uppercase tracking-wide">Book Now</Button>
+                  <Button className="bg-gradient-to-r from-blue-400 to-green-500 hover:from-blue-500 hover:to-green-600 text-base sm:text-xl px-5 sm:px-10 py-3 sm:py-4 shadow-xl rounded-full font-bold uppercase tracking-wide">Contact</Button>
                 </div>
               </div>
             </div>

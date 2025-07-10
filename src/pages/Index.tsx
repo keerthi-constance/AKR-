@@ -300,7 +300,7 @@ export default function Index() {
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="gradient-text">About AKR Group Of Companies</span>
             </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto text-justify">
                 Building a legacy of excellence through innovation, integrity, and unwavering commitment to our community
               </p>
             </div>
@@ -309,13 +309,13 @@ export default function Index() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
               <div className="glass-card p-8">
                 <h3 className="text-2xl font-bold gradient-text mb-6">Our Family Legacy</h3>
-                                  <div className="mb-6">
-                    <img src="/images/image copy.png" alt="AKR Group Family" className="w-full rounded-lg shadow-lg" />
-                  </div>
-                <p className="text-gray-700 leading-relaxed">
-                  The AKR Group Of Companies is built on strong family values and traditions passed down through generations. Our
-                  leadership team combines decades of experience with fresh perspectives, ensuring sustainable growth
-                  while maintaining our core principles of integrity, excellence, and community service.
+                <div className="mb-6">
+                  <img src="/images/image copy.png" alt="AKR Group Family" className="w-full rounded-lg shadow-lg" />
+                </div>
+                <p className="text-gray-700 leading-relaxed text-justify">
+                  AKR's strength lies in its roots — a family legacy built on integrity, hard work, and visionary leadership.<br/>
+                  As the torchbearer of this legacy, Mr. Rojar Stalin, Mr. Anton's son, took over the leadership and propelled the company into a new era. His forward-thinking mindset and commitment to community development have driven AKR to new heights while staying true to the values instilled by his father.<br/>
+                  Together, the family's collective dedication continues to guide AKR's mission: empowering communities, fostering economic growth, and creating sustainable value for future generations.
                 </p>
               </div>
 
@@ -324,25 +324,23 @@ export default function Index() {
                 <div className="space-y-6">
                   <div>
                     <h4 className="text-lg font-semibold text-gray-800 mb-3">Mission</h4>
-                    <p className="text-gray-700 leading-relaxed">
-                      To provide exceptional products and services across diverse industries while maintaining the
-                      highest standards of quality, innovation, and customer satisfaction.
+                    <p className="text-gray-700 leading-relaxed text-justify">
+                      To deliver exceptional products and services across diverse industries, while setting new standards in quality, innovation, and customer care — all driven by a deep commitment to uplifting communities and empowering lives.
                     </p>
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-800 mb-3">Vision</h4>
-                    <p className="text-gray-700 leading-relaxed">
-                      To be the leading business group in Sri Lanka, recognized for our commitment to excellence,
-                      sustainable practices, and positive impact on communities we serve.
+                    <p className="text-gray-700 leading-relaxed text-justify">
+                      To become Sri Lanka's most trusted and admired business group, recognized for our unwavering dedication to excellence, sustainable growth, and a meaningful impact on every community we serve.
                     </p>
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-800 mb-3">Values</h4>
-                    <ul className="text-gray-700 space-y-2">
-                      <li>• Integrity and Transparency</li>
-                      <li>• Excellence in Service</li>
-                      <li>• Community Development</li>
-                      <li>• Sustainable Growth</li>
+                    <ul className="text-gray-700 space-y-2 text-justify">
+                      <li>• <b>Integrity & Transparency</b> — We build trust through honesty and openness in everything we do.</li>
+                      <li>• <b>Excellence in Service</b> — We go beyond expectations, delivering value at every touchpoint.</li>
+                      <li>• <b>Community Development</b> — We believe in giving back and nurturing strong, resilient communities.</li>
+                      <li>• <b>Sustainable Growth</b> — We grow responsibly, with a focus on long-term impact and environmental stewardship.</li>
                     </ul>
                   </div>
                 </div>
@@ -351,12 +349,12 @@ export default function Index() {
 
             {/* Company Overview */}
             <div className="glass-card p-8 md:p-12 text-center">
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8 text-justify">
                 AKR Group of Companies stands as a testament to entrepreneurial vision and diversified excellence. With
                 a strong foundation built over decades, we have expanded across multiple industries, delivering
                 exceptional value and innovative solutions to our clients and communities.
               </p>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8 text-justify">
                 Our commitment to quality, sustainability, and social responsibility drives every aspect of our business
                 operations. From construction and retail to agriculture and beauty services, we maintain the highest
                 standards while fostering growth and innovation.
